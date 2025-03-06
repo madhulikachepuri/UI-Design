@@ -1,0 +1,4 @@
+void sdemo(fruit) {
+	switch
+
+}
