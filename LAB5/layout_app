@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const LApp());
+}
+
+class LApp extends StatelessWidget {
+  const LApp({super.key}); //constructor
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+
+
+          child:GridView.count(
+            crossAxisCount: 2,
+            children: <Widget>[
+              Container(color:Colors.red, child:Text('FIRST')),
+              Container(color:Colors.blue, child:Text('SECOND')),
+              Container(color:Colors.brown, child:Text('THIRD')),
+              Container(color:Colors.yellow, child:Text('FOURTH')),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
