@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: const MyHomePage(title: 'Login page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          height: 300, // Adjusted height
+          width: 300,   // Adjusted width
+          color: Colors.brown[200], // Lighter brown for better visibility
+          padding: const EdgeInsets.all(20.0), // Added padding
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              const Text(
+                'Login',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Username',
+                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Add your login logic here
+                  print('Login button pressed');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue, // Example button color
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text('Login'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
